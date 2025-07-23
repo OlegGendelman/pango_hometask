@@ -44,6 +44,18 @@ def test_park_same_car(page: Page) -> None:
     logger.info("Session started for {config.eight_digit_lp}")
     expect(page.get_by_role("alert")).to_contain_text(f"Parking started for {config.eight_digit_lp}")
 
+    logger.info("Adding new user")
+    page.get_by_role("link", name="Users").click()
+    page.get_by_role("link", name="Add User").click()
+    logger.info("Entering new user details")
+    page.get_by_role("textbox", name="Username").click()
+    page.get_by_role("textbox", name="Username").fill(config.username_2)
+    page.get_by_role("textbox", name="Username").press("Tab")
+    page.get_by_role("textbox", name="Password").fill(config.password_2)
+    page.get_by_role("button", name="Save").click()
+    logger.info("Verifying user added successfully")
+    expect(page.locator("body")).to_contain_text(config.random_user)
+
     logger.info("Logging out and trying to park the same car again")
     page.get_by_role("link", name="Logout").click()
 
@@ -69,4 +81,3 @@ def test_park_same_car(page: Page) -> None:
     page.get_by_role("button", name="סיים").click()
     logger.info("Logging out")
     page.get_by_role("link", name="Logout").click()
-

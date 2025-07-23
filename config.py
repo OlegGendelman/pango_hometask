@@ -23,4 +23,3 @@ five_digit_lp = "12121"
 
 parking_slot = "A1"
 parking_slot_2 = "B2"
-

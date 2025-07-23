@@ -35,4 +35,3 @@ def test_license_plates_length(page: Page) -> None:
         # Assert no error is shown
         expect(page.locator("#plate-error")).not_to_be_visible()
         logger.info(f"{plate} license plate tested successfully")
-
