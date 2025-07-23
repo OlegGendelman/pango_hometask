@@ -54,3 +54,4 @@ def test_add_user(page: Page) -> None:
     expect(page.locator("tbody")).to_contain_text("סיים")
     logger.info("Ending parking with new user")
     page.get_by_role("button", name="סיים").click()
+

@@ -69,3 +69,4 @@ def test_park_same_car(page: Page) -> None:
     page.get_by_role("button", name="סיים").click()
     logger.info("Logging out")
     page.get_by_role("link", name="Logout").click()
+

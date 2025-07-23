@@ -27,3 +27,4 @@ def capture_test_logs(request, caplog):
     caplog.set_level(logging.INFO)
     yield
     request.node.log = "\n".join(caplog.messages)
+
