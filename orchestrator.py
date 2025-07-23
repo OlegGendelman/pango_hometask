@@ -30,12 +30,12 @@ def run_pytest_with_html_report():
 
     print(f"✅ Report generated at: {config.report_path}")
 
-    # Wait briefly to ensure file is written
+    # Wait briefly to ensure a file is written
     time.sleep(1)
 
     if os.path.exists(config.report_path):
         try:
-            # Attempt to open in new window
+            # Attempt to an open-generated report in a new window
             webbrowser.open_new(config.report_path)
             print("🌐 Report opened in browser.")
         except Exception as e:
